@@ -131,6 +131,23 @@ Typical performance trend observed:
 
 ---
 
+## Final Model Comparison
+
+| Model | Validation ROC-AUC |
+|------|--------------------|
+| ResNet18 | 0.963 |
+| GRU | 0.950 |
+| Attention LSTM | 0.943 |
+| MobileNetV2 | 0.887 |
+| LSTM | 0.625 |
+| RNN | 0.615 |
+
+### Performance Visualization
+
+![Model Comparison](model_comparison_auc.png)
+
+---
+
 ## Reproducibility
 
 Experiments are made reproducible using fixed random seeds for:
