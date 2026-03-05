@@ -179,5 +179,5 @@ Run all cells sequentially.
 ---
 
 ## Author
-Varadharajan K
+Varadharajan K <br>
 Deep Learning Coursework Project: Voice-Based Stress Detection
