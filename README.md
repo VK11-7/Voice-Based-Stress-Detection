@@ -237,9 +237,9 @@ Key observations:
 - Real vs generated sample comparison <br><br>
 ![Model Comparison-7](Real-Generated-GAN.png) <br><br>
 
-- Summary:
-AE Test MSE: 0.00078556006
-GAN Mean Diff: 0.023843948
+- Summary: <br>
+AE Test MSE: 0.00078556006 <br>
+GAN Mean Diff: 0.023843948 <br>
 GAN Std Diff: 0.04207194 <br><br>
 
 ![Model Comparison-1](Train-vs-Test-AE.png) <br><br>
