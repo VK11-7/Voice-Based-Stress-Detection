@@ -46,7 +46,7 @@ voice-stress-detection/
 │   └── 25030-DL-Review1v5.ipynb
 │
 └── Review2/
-    └── 25030-DL-Review2v6.ipynb
+│   └── 25030-DL-Review2v6.ipynb
 │
 └── Review3/
     └── 25030-DL-Review3v9.ipynb
