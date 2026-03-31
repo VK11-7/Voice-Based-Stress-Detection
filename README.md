@@ -221,7 +221,7 @@ Key observations:
 
 ## Performance Visualization
 
-- Autoencoder loss (train vs validation)
+- Autoencoder loss (train vs validation) <br>
 ![Model Comparison-2](AE-Loss.png)
 
 - GAN loss (Generator vs Discriminator)
