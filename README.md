@@ -47,6 +47,9 @@ voice-stress-detection/
 │
 └── Review2/
     └── 25030-DL-Review2v6.ipynb
+│
+└── Review3/
+    └── 25030-DL-Review3v9.ipynb
 ```
 
 ---
@@ -148,6 +151,84 @@ Typical performance trend observed:
 
 ---
 
+## Review 3: Generative Modeling (Autoencoder & GAN)
+
+### Autoencoder
+- Learns compressed **latent representations** of speech features
+- Reconstructs input features
+- Helps analyze feature redundancy and structure
+
+### Generative Adversarial Network (GAN)
+- Generator produces synthetic feature vectors
+- Discriminator distinguishes real vs fake data
+- Learns underlying data distribution
+
+---
+
+## Training Strategy and Stability
+
+To ensure stable training:
+
+- **Early Stopping** prevents overfitting
+- **Batch Normalization** improves convergence
+- **Label Smoothing** stabilizes GAN training
+- Balanced Generator–Discriminator updates
+- Hyperparameter tuning:
+  - Learning rate
+  - Batch size
+
+---
+
+## Latent Space Analysis
+
+Latent representations are visualized using:
+
+- **PCA (Principal Component Analysis)**  
+  → Captures global variance structure
+
+- **t-SNE (t-Distributed Stochastic Neighbor Embedding)**  
+  → Captures local clustering patterns
+
+These visualizations help observe **stress-level separability in latent space**.
+
+---
+
+## Evaluation Metrics
+
+### Autoencoder
+- Reconstruction Mean Squared Error (MSE)
+- Error distribution analysis
+- Train vs Test comparison (generalization)
+
+### GAN
+- Mean and standard deviation comparison
+- Distribution overlap (real vs generated)
+- Diversity check (mode collapse detection)
+
+---
+
+## Results Summary
+
+Key observations:
+
+- Autoencoder learns meaningful latent representations
+- Latent space shows clustering of stress categories
+- GAN generates realistic feature distributions
+- No significant mode collapse observed
+- Model generalization verified using train vs test error comparison
+
+---
+
+## Performance Visualization
+
+- Autoencoder loss (train vs validation)
+- GAN loss (Generator vs Discriminator)
+- Latent space plots (PCA & t-SNE)
+- Reconstruction vs original signals
+- Real vs generated sample comparison
+
+---
+
 ## Reproducibility
 
 Experiments are made reproducible using fixed random seeds for:
@@ -189,6 +270,12 @@ Review 2 notebook:
 
 ```
 Review2/25030-DL-Review2v6.ipynb
+```
+
+Review 3 notebook:
+
+```
+Review3/25030-DL-Review3v9.ipynb
 ```
 
 Run all cells sequentially.
