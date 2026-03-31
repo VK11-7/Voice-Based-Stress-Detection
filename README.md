@@ -222,10 +222,29 @@ Key observations:
 ## Performance Visualization
 
 - Autoencoder loss (train vs validation)
+![Model Comparison-2](AE-Loss.png)
+
 - GAN loss (Generator vs Discriminator)
+![Model Comparison-3](GAN-Loss.png)
+
 - Latent space plots (PCA & t-SNE)
+![Model Comparison-4](PCA-Latent.png)
+![Model Comparison-5](t-SNE-Latent.png)
+
 - Reconstruction vs original signals
+![Model Comparison-6](AE-Recon.png)
+
 - Real vs generated sample comparison
+![Model Comparison-7](Real-Generated-GAN.png)
+
+- Summary:
+AE Test MSE: 0.00078556006
+GAN Mean Diff: 0.023843948
+GAN Std Diff: 0.04207194
+
+![Model Comparison-1](Train-vs-Test-AE.png)
+
+![Model Comparison-8](GAN-Comparion.png)
 
 ---
 
