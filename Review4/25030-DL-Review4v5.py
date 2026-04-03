@@ -16,7 +16,7 @@ st.set_page_config(
 # ── Imports ────────────────────────────────────────────────────────────────────
 import os, random, io, warnings, tempfile
 warnings.filterwarnings("ignore")
-
+import kagglehub
 import numpy as np
 import torch
 import torch.nn as nn
@@ -1000,9 +1000,8 @@ elif current == "experimental":
         """)
 
     st.markdown("<div class='sec-header'>Run Live Ablation Simulation</div>", unsafe_allow_html=True)
-    st.markdown("<div class='warn-box'>This section requires the RAVDESS dataset path. Enter it below to run a quick ablation.</div>", unsafe_allow_html=True)
-    dataset_path = st.text_input("RAVDESS Dataset Path (e.g., from kagglehub)", key="abl_path",
-                                  placeholder="/root/.cache/kagglehub/datasets/...")
+    #st.markdown("<div class='warn-box'>This section requires the RAVDESS dataset path. Enter it below to run a quick ablation.</div>", unsafe_allow_html=True)
+    dataset_path = kagglehub.dataset_download("uwrfkaggler/ravdess-emotional-speech-audio")
     if dataset_path and os.path.exists(dataset_path):
         if st.button("Run Ablation (LSTM: with vs without augmentation)", key="run_abl"):
             with st.spinner("Running ablation..."):
@@ -1085,7 +1084,7 @@ elif current == "hyperparam":
     """, unsafe_allow_html=True)
 
     st.markdown("<div class='sec-header'>Interactive Tuning Demo</div>", unsafe_allow_html=True)
-    dataset_path = st.text_input("RAVDESS Dataset Path", key="hp_path", placeholder="/root/.cache/...")
+    dataset_path = kagglehub.dataset_download("uwrfkaggler/ravdess-emotional-speech-audio")
 
     if dataset_path and os.path.exists(dataset_path):
         col1, col2, col3, col4 = st.columns(4)
@@ -1171,7 +1170,7 @@ elif current == "hyperparam":
 elif current == "evaluation":
     st.markdown("<div class='hero'><h1>📈 Performance Evaluation</h1><p>Proper metrics · Statistical reasoning · Comparative analysis</p></div>", unsafe_allow_html=True)
 
-    dataset_path = st.text_input("RAVDESS Dataset Path", key="eval_path", placeholder="/root/.cache/...")
+    dataset_path = kagglehub.dataset_download("uwrfkaggler/ravdess-emotional-speech-audio")
 
     if dataset_path and os.path.exists(dataset_path):
         model_choice = st.selectbox("Select model to evaluate:", ["LSTM", "GRU", "RNN", "AttentionLSTM", "CNN", "MLP"])
@@ -1312,8 +1311,7 @@ elif current == "demo":
         demo_feature = "mel" if demo_model_name == "CNN" else "mfcc"
         st.markdown(f"**Feature Type:** `{demo_feature.upper()}`")
 
-    dataset_path_demo = st.text_input("RAVDESS Dataset Path (for model training)", key="demo_path",
-                                       placeholder="/root/.cache/kagglehub/datasets/...")
+    dataset_path_demo = kagglehub.dataset_download("uwrfkaggler/ravdess-emotional-speech-audio")
 
     if uploaded_audio and dataset_path_demo and os.path.exists(dataset_path_demo):
         if st.button("🎙️ Analyze Stress Level", key="run_demo"):
